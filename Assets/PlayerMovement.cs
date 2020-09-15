@@ -14,13 +14,11 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello, World!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Movement
         suggestedVelocity.x = 0;
         suggestedVelocity.y = 0;
         if (Input.GetKey("d"))
@@ -43,6 +41,5 @@ public class PlayerMovement : MonoBehaviour
             suggestedVelocity.y /= 2;
         }
         playerBody.velocity = suggestedVelocity;
-        //Movement - End
     }
 }
