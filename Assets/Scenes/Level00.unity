@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 1243902364}
   - component: {fileID: 1243902363}
   - component: {fileID: 1243902362}
+  - component: {fileID: 1243902365}
   m_Layer: 0
   m_Name: Dogo
   m_TagString: Untagged
@@ -395,13 +396,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243902361}
-  m_LocalRotation: {x: -0, y: -0, z: 0.85915273, w: -0.51171935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.97, y: 3.3, z: 0}
   m_LocalScale: {x: 0.31478587, y: 0.31478587, z: 0.31478587}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -118.443}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1243902365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243902361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba74e7d11f31dd4cbec0b81a4a8a64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2121292065}
+  stoppingDistance: 2
+  moveSpeed: 5
 --- !u!1 &1950722658
 GameObject:
   m_ObjectHideFlags: 0
