@@ -1,16 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DogoFollowing : MonoBehaviour
 {
-    public Vector3 target;
+    private Vector3 target;
     public float stoppingDistance;
     public float moveSpeed;
     public float approximation;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float dashForce = 20f;
+
+    private void Start() {
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -31,5 +31,12 @@ public class DogoFollowing : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target, -moveSpeed * Time.deltaTime);
         }
+        
+        // if(Input.GetKeyDown(KeyCode.Mouse1))
+        // {
+        //     GetComponent<Rigidbody2D>().AddForce(target.normalized * dashForce, ForceMode2D.Force);
+        //     Debug.Log("Adding force");
+        // }
+            
     }
 }
