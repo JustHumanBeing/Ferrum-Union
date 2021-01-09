@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody2D playerBody;
+    public GameObject DeathScreen;
 
     public float velocityAmount = 10f;
     Vector2 suggestedVelocity;
+    public bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +49,15 @@ public class PlayerMovement : MonoBehaviour
             suggestedVelocity.y /= 2;
         }
         playerBody.velocity = suggestedVelocity;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Enemy") {
+            isAlive = false;
+            DeathScreen.transform.GetChild(0).gameObject.SetActive(true);
+            //
+            //Instantiate(DeathScreen, Vector2.zero, Quaternion.identity);
+            velocityAmount = 0;
+        }
     }
 }

@@ -17,14 +17,16 @@ public class ZombieKilling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        double r1 = 1.637316;
-        double r2 = 1.019662;
+        DeathScreen = GameObject.Find("Canvas");
+        double r1 = 1.637316/2;
+        double r2 = 1.942079/2;
         // double r = Math.Sqrt(Math.Pow(target.position.x-transform.position.x,2)+Math.Pow(target.position.y-transform.position.y,2));
-        if(Vector2.Distance(transform.position, target.position)<r1+r2){    
-            DeathScreen.SetActive(true);
+        if(Vector2.Distance(GetComponent<Transform>().position, target.position)<r1+r2){    
+            DeathScreen.transform.GetChild(0).gameObject.SetActive(true);
+            //
+            //Instantiate(DeathScreen, Vector2.zero, Quaternion.identity);
             PlayerMovement plMv = player.GetComponent<PlayerMovement>();
-            GameObject zombie =  GameObject.Find("Zombie");
-            DogoFollowing zombieFollowing = zombie.GetComponent<DogoFollowing>();
+            ZombieFollowing zombieFollowing = GetComponent<ZombieFollowing>();
             zombieFollowing.moveSpeed = 0;
             plMv.velocityAmount = 0;
         }
